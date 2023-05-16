@@ -1,0 +1,12 @@
+Function ID3
+    Input: Set de elementos S
+    Output: Árbol de decisión DT
+  If todos los elementos en S poseen la misma etiqueta c
+    Return una hoja con la etiqueta c
+  Else
+    Seleccionar un atributo A del set S usando una función heurística
+    Crear un nodo al Árbol DT con el atributo A como clasificador
+    For cada valor v_i del atributo A
+      Crear un subset S_i con todos los elementos de S con A = v_i
+      Construir un subárbol DT_i para el subset S_i usando ID3
+      Generar una arista que conecte DT y DT_i

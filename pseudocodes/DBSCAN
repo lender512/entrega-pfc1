@@ -1,0 +1,25 @@
+Function SEQUENTIAL DBSCAN
+    Input: Database: Datos
+    Input:  R: Radio
+    Input: minPts: Density threshold 
+    Input: dist: Función de distancia
+    Data: label: Etiqueta para cada punto, inicialmente indefinido
+    Output: label
+    For cada Punto P en Datos
+        If label(p) != indefinido:
+            continue
+        Neighbors N = RangeQuery(DB, dist, P, R)
+        If |N| < minPts:
+            label(P) = Ruido
+            continue
+        c = siguiente label del cluster
+        S = N \ {p}
+        For cada q en S
+            If label(q) == Ruido:
+                label(q) = c
+            If label(q) != indefinido:
+                continue
+            label(q) = c
+            if |N| < minPts:
+                continue
+            S = S U N
