@@ -2,22 +2,17 @@
 
 Since the beginning of the digital age, cybersecurity has been developing and adapting to 
 the new threats that arise in the digital world. One of the key topics of great importance 
-in this field is user authentication. Different methods have been used over the years, from 
-passwords to the use of fingerprints \cite{web}. However, most of these methods seek to guarantee user authentication only at the beginning of the session of interaction between a 
-human and a device, and not through it. This is a problem, since if a user leaves their 
-session open, anyone can access their information. For this reason, the use of behavioral 
-bio-metrics has been proposed, which allows the user to be authenticated throughout the session, 
-and not only at the beginning of it \cite{behavior}. One of the behavioral bio-metrics 
-applications is called Keystroke Dynamics, which consists of constantly identifying a user 
-throughout a session through the patterns and rhythm that they present when writing using a 
-keyboard.
+in this field is user authentication. Different methods have been used over the years: passwords, iris recognition, fingerprint matching, etc. However, most of these methods seek to guarantee user authentication only at the beginning of the session of interaction between a 
+human and a device, but not through it. This is a problem, since if a user leaves their 
+session open, anyone can access their information. For this reason, the use of behavioral bio-metrics has been proposed, which allows the user to be authenticated not only at the begining of the session but also throughout it \cite{behavior}. One of the behavioral bio-metrics applications is called Keystroke Dynamics, which consists of the authentication a user at the begining abd 
+throughout a session by analyzing the patterns and rhythm that they present when writing using a keyboard.
 
 
 The main problem with the Keystroke Dynamics technique as a method for user authentication 
 is the different classification algorithms used to cluster users. Different comparison 
 techniques have been used though the years, distance metrics \cite{combine_distance}, 
-multiple machine learning techniques \cite{machine_learning} and Probabilistic Neural Networks 
-\cite{pnn}. All these implementations have very different results, some of the best achieve 
+multiple machine learning techniques \cite{machine_learning} and Neural Networks 
+\cite{pnn, deep_learning}. All these techniques have very different results, some of the best achieve 
 an average false rate of 2\% while others are between 8 and 27\% \cite{typing_patterns}. 
 In addition, it has been shown that precision can vary depending on what is being written. 
 It has been possible to observe how the precision goes from 79\% with text that is transcribed 
