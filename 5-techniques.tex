@@ -19,9 +19,11 @@ Then the Manhattan distance is measured between the transformed data.
 	d(x',y') = \sum_{i=1}^{n} |x_i' - y_i'|
 \end{equation}
 
-Then, the authors apply the Manhattan distance to the transformed data. Finally, this new distance is used to compare the data of a user with the other data with a Nearest Neighbor classifier.
+Then, the authors apply the Manhattan distance to the transformed data. Finally, this new distance is used to compare the data of a user with the other data with a standard Nearest Neighbor classifier.
 
 The authors also used an outlayer detection technique in the training of the model to improve the results. This technique is based on the use of the median $\mu$ and the standard deviation $\sigma$ of the features so that only the feature vectors with  its $i$th feature in the range $[\mu_i - k\sigma_i, \mu_i + k\sigma_i]$ are used in the training of the model.
+
+This technique achieved an EER of 8.4\% This result improved the results preiously obtaned \cite{killourhy2009comparing} of the Manhattan distance (EER of 9.6\%) and the Mahalanobis distance (EER of 10\%).
 
 \subsection{Deep Learning}
 
@@ -60,3 +62,5 @@ Then, the authors proposed multiple configurations of the neural network archite
 \end{figure}
 
 As it can be seen, all the vectors extracted from a given text with specifict lenght in terms of keystrokes are arrange as a matrix where each row is a vector. Then, a one dimensional CNN with a convolutional kernel with lenght 2 (feature vectors) is applied to the matrix to extract 32 the features that are going to be used by the RNN, a double layer GRU. Finally, the output of the RNN connected to the fully-connected layer and then to the output layer, which is a sigmoid function that outputs the probability of the user being the user that the model is trying to identify. The authors also added droutout layers to each layer of the model to avoid overfitting.
+
+This approach obtained a FRR of 2.07\%, a FAR of 3.26\% and an EER of 2.67\% using the Clarkson II dataset and a FRR of 6.61\%, a FAR of 5.31\% and an EER of 5.97\% using the Buffalo dataset.

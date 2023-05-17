@@ -1,27 +1,10 @@
 \section{Introduction}
 
-Since the beginning of the digital age, cybersecurity has been developing and adapting to 
-the new threats that arise in the digital world. One of the key topics of great importance 
-in this field is user authentication. Different methods have been used over the years: passwords, iris recognition, fingerprint matching, etc. However, most of these methods seek to guarantee user authentication only at the beginning of the session of interaction between a 
-human and a device, but not through it. This is a problem, since if a user leaves their 
-session open, anyone can access their information. For this reason, the use of behavioral bio-metrics has been proposed, which allows the user to be authenticated not only at the begining of the session but also throughout it \cite{behavior}. One of the behavioral bio-metrics applications is called Keystroke Dynamics, which consists of the authentication a user at the begining abd 
-throughout a session by analyzing the patterns and rhythm that they present when writing using a keyboard.
+Since the beginning of the digital age, cybersecurity has been developing and adapting to the new threats that arise in the digital world. One of the topics of great importance in this field is user authentication. Different methods have been used over the years, such as passwords, iris recognition, fingerprint matching, etc. However, most of these methods seek to guarantee the authentication only at the beginning of the session of interaction between a human and a device, but not through said session. This creates a problem: if a user leaves their already authenticated session open, anyone can access their information. For this reason, the use of behavioral biometrics has been proposed. These authentication methods allows the user to be authenticated not only at the begining of the session but also throughout it \cite{behavior}.
+
+Keystroke Dynamics are behavioral biometrics that provides the authentication a user at the begining and throughout a session by analyzing the patterns and rhythm that they present when writing using a keyboard \cite{combine_distance}. This techniques were suggested during World War II \cite{secondworldwar} when the idea of using the rhythm of the Morse code to identify the operator of a telegraph was proposed. But it was not until the develop of computers and the Internet studies started to encourage the use of this technique \cite{monrose2000keystroke}.
 
 
-The main problem with the Keystroke Dynamics technique as a method for user authentication 
-is the different classification algorithms used to cluster users. Different comparison 
-techniques have been used though the years, distance metrics \cite{combine_distance}, 
-multiple machine learning techniques \cite{machine_learning} and Neural Networks 
-\cite{pnn, deep_learning}. All these techniques have very different results, some of the best achieve 
-an average false rate of 2\% while others are between 8 and 27\% \cite{typing_patterns}. 
-In addition, it has been shown that precision can vary depending on what is being written. 
-It has been possible to observe how the precision goes from 79\% with text that is transcribed 
-to 21\% with text that is freely written \cite{old} and that if a person is writing code the 
-algorithms can reach a precision of 98.6\% \cite{programmers}.
+The main problem with the Keystroke Dynamics techniques as a method for user authentication is the different algorithms, data extraction methods and features used to authenticate a user. Different comparison techniques have been used through the years. Probabilistic methods \cite{bleha1990login}, multiple machine learning techniques \cite{machine_learning} and Neural Networks are some examples of these techniques \cite{pnn, deep_learning}. All these techniques have very different results, some of the best achieve an average FAR of 2\% while others are between 8 and 27\% \cite{typing_patterns}. In addition, it has been shown that precision can vary depending on what is being written. It has been possible to observe how the precision goes from 79\% with text that is transcribed to 21\% with text that is freely written \cite{old} and how if a person is writing in a particular context, like programmers writing code, the algorithms can reach a precision of 98.6\% \cite{programmers}.
 
-The main objective of this work is to implement two algorithms for user 
-authentication through Keystroke Dynamics that have already been proposed. It seeks to 
-compare the results obtained by each of the algorithms, and determine which of them is 
-the most appropriate for this type of authentication. In addition, it seeks to determine 
-the behavior of each of the algorithms with respect to the type of data that is entered, 
-that is, if the algorithm is more accurate with free text or with text that is transcribed.
+The goal of this document is to implement two algorithms for user authentication through Keystroke Dynamics that have already been proposed in the literature. It is seeked to compare the results obtained by each of the algorithms, and determine which of them is the most appropriate for this type of authentication. In addition, this project also pursue to determine the behavior of each algorithm with respect to the type of data that is used, this is, if the algorithm is more accurate with free text or with fixed text.
