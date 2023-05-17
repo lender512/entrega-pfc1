@@ -23,8 +23,8 @@ In general, the features extracted from the keystroke dynamics are based on the 
 	\item Release timestamp: Defined as the timestamp of the key release.
 	\item Time between keystrokes: This feature is commonly defined as the time that elapses between the key press of the first keystroke and the key release of the second keystroke of a digraph or trigraph.
 	\item Hold time: This is defined as the time that elapses between the key press and the key release of a keystroke.
-	\item Words per minute (WPM): This is the avarage number of words that a user can type in a minute.
-	\item Percentage of usage of special keys: This feature is defined as the percentage of times that a user uses keys like the shift key or CapsLock key.
+	\item Words per minute (WPM): This is the average number of words that a user can type in a minute.
+	\item Percentage of usage of special keys: This feature is defined as the percentage of times that a user uses keys like the shift key or Caps-Lock key.
 \end{itemize}
 
 \subsection{Classification techniques}
@@ -42,7 +42,7 @@ On one hand, Manhattan distance for $n$ dimensions can be defined as the sum of 
 
 Where $x$ and $y$ are vectors of $n$ dimensions and $x_i$ and $y_i$ are the $i$th coordinates of the vectors $x$ and $y$ respectively.
 
-On the other hand Mahalanobis distance can be defined as the distance between two points that depends on the probabiliy distribution of all the points \cite{de2000mahalanobis}. The squared version of this distance can be described by the following formula:
+On the other hand Mahalanobis distance can be defined as the distance between two points that depends on the probability distribution of all the points \cite{de2000mahalanobis}. The squared version of this distance can be described by the following formula:
 
 \begin{equation}
 	d(x,y) = (x-y)^T S^{-1} (x-y)
@@ -51,7 +51,7 @@ On the other hand Mahalanobis distance can be defined as the distance between tw
 Where $x$ and $y$ are vectors of $n$ dimensions and $S$ is the covariance matrix of the set of points.
 
 
-These distances are commonly used in clustering algorithms like K-nearest neighbors. This algorithm stores the multidimensional feature vectos such that when a vector is received it can be classified by the majority of the classes of the nearest neighbors using a distance metric. In the user authentication problem, the user can be identified by finding the single nearest neighbor and using a threshold to determine if the user is the same as the one that is trying to be identified. A simple knn exaplme for 2 dimensional features can be shown in figure \ref{fig:knn}.
+These distances are commonly used in clustering algorithms like K-nearest neighbors. This algorithm stores the multidimensional feature vectors such that when a vector is received it can be classified by the majority of the classes of the nearest neighbors using a distance metric. In the user authentication problem, the user can be identified by finding the single nearest neighbor and using a threshold to determine if the user is the same as the one that is trying to be identified. A simple knn example for 2 dimensional features can be shown in figure \ref{fig:knn}.
 
 \begin{figure}[h]
     \centering
@@ -62,25 +62,25 @@ These distances are commonly used in clustering algorithms like K-nearest neighb
 
 The second group of techniques is based on the use of deep learning techniques.
 
-One of the most important parts of this approach is the use of algorithms to vectorize the text, such that said text can be used as input for the neural network. Some of the most common vectorization techniques try to represent text as numbers, assigning numeric values to words, characters or more complex structures like tokens. Other techniques try to transform images into matrices that contain RGB or grayscale values of the pixels. Finally there are techinques that have numbers as input and try to normalize and standardize the data to perform better in the neural network.
+One of the most important parts of this approach is the use of algorithms to vectorize the text, such that said text can be used as input for the neural network. Some of the most common vectorization techniques try to represent text as numbers, assigning numeric values to words, characters or more complex structures like tokens. Other techniques try to transform images into matrices that contain RGB or grayscale values of the pixels. Finally there are techniques that have numbers as input and try to normalize and standardize the data to perform better in the neural network.
 
 This techniques are characterized by the use of neural networks. These networks try to simulate the human brain by being composed of multiple layers of neurons that are connected to each other. Each neuron is a mathematical function that receives multiple inputs and produces one or more outputs.
 
 The neural networks that are going to be used in this project are the following:
 
 \begin{itemize}
-	\item Convolutional Neural Networks: CNNs are a type of neural network architecture that have been successful in tasks such as image classification, object detection, image segmentation, by feature extraction. \cite{valueva2020cnn}. They are designed to automatically learn and extract hierarchical patterns and features from input data. CNNs use convolutional layers, pooling layers, and fully connected layers \cite{taye2023layers}. Convolutional layers apply filters to the input data, capturing spatial dependencies and detecting local patterns. Pooling layers reduce the spatial dimensions of the data. Fully connected layers are usaly placed at the end of the network and are used to get the final output.
+	\item Convolutional Neural Networks: CNNs are a type of neural network architecture that have been successful in tasks such as image classification, object detection, image segmentation, by feature extraction. \cite{valueva2020cnn}. They are designed to automatically learn and extract hierarchical patterns and features from input data. CNNs use convolutional layers, pooling layers, and fully connected layers \cite{taye2023layers}. Convolutional layers apply filters to the input data, capturing spatial dependencies and detecting local patterns. Pooling layers reduce the spatial dimensions of the data. Fully connected layers are usually placed at the end of the network and are used to get the final output.
 	\item Recurrent Neural Network: RNNs are neural network architectures suitable for sequential data such as time series, text, and speech\cite{li2015rnn_structure}. Unlike traditional networks, RNNs contain loops that allow information to persist and be processed across different time steps \cite{dupond2019rnn}. The presence of a hidden state, the internal memory of the network, grants RNNs the ability to capture temporal dependencies and contextual information within the data.
 	\item Gated Recurrent Unit: GRU is a variation of RNN designed to address the vanishing gradient problem and improve the modeling of long-term dependencies. GRU incorporates gatelike mechanisms that regulate the flow of information within the network. GRU units consist of an update gate and a reset gate, which control the operations of information update and reset in the hidden state \cite{cho2014gru}. The update gate determines how much of the previous hidden state to retain, while the reset gate decides how much of the previous state to forget. GRUs have demonstrated superior performance over traditional RNNs in various tasks such as language modeling, machine translation, and speech recognition \cite{ravanelli2018gruperformance}.
 \end{itemize}
 
 \subsection{benchmark}
 
-The follwing factors are used to evaluate the performance of biometric systems \cite{benchmarks}:
+The following factors are used to evaluate the performance of biometric systems \cite{benchmarks}:
 
 \begin{itemize}
 	\item False Acceptance Rate (FAR):
-	FAR is a metric used in biometric system benchmarking to measure the likelihood of the system incorrectly granting access to unauthorized individuals. It represents the rate at which the system mistakenly identifies impostors as genuine users. A lower FAR indicates a higher level of security, as it means the system is less likely to mistakenly accept unauthorized individuals. This characteriztic can be represented by the following formula:
+	FAR is a metric used in biometric system benchmarking to measure the likelihood of the system incorrectly granting access to unauthorized individuals. It represents the rate at which the system mistakenly identifies impostors as genuine users. A lower FAR indicates a higher level of security, as it means the system is less likely to mistakenly accept unauthorized individuals. This characteristic can be represented by the following formula:
 
 	\begin{equation}
 		FAR = \frac{\text{False Acceptances}}{\text{Total Impostor Attempts}}
