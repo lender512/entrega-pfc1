@@ -38,6 +38,7 @@ On one hand, Manhattan distance for $n$ dimensions can be defined as the sum of 
 
 \begin{equation}
 	d(x,y) = \sum_{i=1}^{n} |x_i - y_i|
+	\label{eq:manhattan}
 \end{equation}
 
 Where $x$ and $y$ are vectors of $n$ dimensions and $x_i$ and $y_i$ are the $i$th coordinates of the vectors $x$ and $y$ respectively.
@@ -46,6 +47,7 @@ On the other hand Mahalanobis distance can be defined as the distance between tw
 
 \begin{equation}
 	d(x,y) = (x-y)^T S^{-1} (x-y)
+	\label{eq:mahalanobis}
 \end{equation}
 
 Where $x$ and $y$ are vectors of $n$ dimensions and $S$ is the covariance matrix of the set of points.
@@ -84,12 +86,14 @@ The following factors are used to evaluate the performance of biometric systems 
 
 	\begin{equation}
 		FAR = \frac{\text{False Acceptances}}{\text{Total Impostor Attempts}}
+		\label{eq:far}
 	\end{equation}
 	
 	\item False Rejection Rate (FRR):
 	FRR is a metric used to assess the probability of the biometric system incorrectly rejecting legitimate users. It represents the rate at which the system fails to recognize or authenticate genuine users. A lower FRR indicates better user convenience, as it means the system is less likely to deny access to legitimate users. This metric can be represented by the following formula:
 	\begin{equation}
 		FRR = \frac{\text{False Rejections}}{\text{Total Genuine Attempts}}
+		\label{eq:frr}
 	\end{equation}
 	
 	\item Equal Error Rate (EER):
