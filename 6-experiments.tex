@@ -22,3 +22,34 @@ Other studies have already used these metrics to evaluate the performance of bio
     \caption{FAR and FRR for different approaches to keystroke dynamics authentication \cite{typing_patterns}}
     \label{fig:far_frr}
 \end{figure}
+
+\subsection{Results}
+
+\subsubsection{Nearest Neighbors}
+
+The first experiments used the Nearest Neighbors algorithm to classify the data. The algorithm was run using the Manhattan, Mahalanobis, and the new distance metric proposed by \cite{combine_distance}. Firstly, the data was extracted from the CMU dataset and the features were extracted to be used in a feature vector. Then, for each user, the data was split into a training set and a test set. Just the training data of the selecte user was used to train the model, feature vectors of the rest of the users were not used for training because it is unrealistic to assume that the system would have access to the typing patterns of all users. Then the Equal Error Rate (EER) was calculated for each user and the average EER was calculated for all users. The results can be seen in Table \ref{tab:nn_results}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Metric} & \textbf{Value} \\
+        \hline
+        Distance & EER \\
+        \hline
+        Manhattan & 0.169 \\
+        \hline
+        Mahalanobis & 0.168 \\
+        \hline
+        New Distance & 0.150 \\
+    \end{tabular}
+    \caption{Nearest Neighbors results}
+    \label{tab:nn_results}
+
+\end{table}
+
+As can be seen in Table \ref{tab:nn_results}, the Nearest Neighbors algorithm achieved an EER of 0.150 using the new distance metric propsed by \cite{combine_distance}. This is a significant improvement over the results obtained using the Manhattan and Mahalanobis distances. This improvement can be attributed to the fact that the new distance metric takes into account the variance of the data, which is a crucial factor in the CMU dataset.
+
+\subsubsection{Neural Network}
+
+The second experiments used a Neural Network to classify the data. The 
